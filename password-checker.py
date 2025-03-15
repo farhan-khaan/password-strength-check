@@ -4,14 +4,29 @@ import re  # Regular Expression
 # Set Page Config
 st.set_page_config(page_title="Password Strength Checker", page_icon="🔐", layout="centered")
 
-# CSS Styling
+# CSS Styling to Change Input Box Color
 st.markdown("""
     <style>
-    body {color: #fff; background-color: #333;}
-    .main {text-align: center;}
-    .st-bw {background-color: #333;}
-    .stButton>button {background-color: #444; color: #fff; border: 1px solid #fff; font-weight: bold; font-size: 1.2em;}
-    .stButton>button:hover {background-color: #fff; color: #333;}
+    /* Change Input Box Color */
+    div[data-baseweb="input"] {
+        background-color: #222 !important;  /* Dark background */
+        border-radius: 5px !important;
+    }
+    input {
+        color: white !important;  /* White text */
+        text-align: center;
+    }
+    /* Style the Button */
+    .stButton>button {
+        background-color: #444 !important;
+        color: white !important;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    .stButton>button:hover {
+        background-color: #666 !important;
+        color: #fff !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -58,7 +73,7 @@ def check_password(password):
             for tip in feedback:
                 st.write(tip)
 
-# Password Input
+# Password Input (Now with custom background color!)
 password = st.text_input("🔑 Enter your password", type="password", help="Enter your password to check its strength")
 
 # Button to Check Password

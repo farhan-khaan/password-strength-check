@@ -11,6 +11,7 @@ st.markdown("""
     div[data-baseweb="input"] {
         background-color: #222 !important;  /* Dark background */
         border-radius: 5px !important;
+        text-color = black
     }
     input {
         color: white !important;  /* White text */
